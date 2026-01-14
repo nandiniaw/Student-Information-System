@@ -1,0 +1,153 @@
+# Student Information System – Week 1 Documentation
+
+## 1. Project Overview
+
+### Project Title
+Student Information System
+
+### Objective
+The objective of this project is to develop a basic console-based Student Information System using Java.  
+The system allows users to add student records and view all stored records through a menu-driven interface.
+
+### Scope (Week 1)
+- Add new student records
+- View all student records
+
+### Out of Scope
+- Search functionality
+- Update or delete operations
+- File handling or database storage
+- Input validation utilities
+
+---
+
+## 2. Technologies Used
+
+- Programming Language: Java
+- Data Structure: ArrayList
+- Input Handling: Scanner
+- Development Environment: Any Java IDE / Command Prompt
+
+---
+
+## 3. Project Structure
+
+Student-Information-System
+├── README.md
+├── src
+│ ├── Student.java
+│ ├── StudentManager.java
+│ └── StudentInformationSystem.java
+├── docs
+│ └── Week1_Documentation.md
+└── test_data
+└── sample_students.txt
+
+---
+
+## 4. Description of Classes
+
+### Student.java
+- Represents a student entity
+- Stores student details such as:
+  - Student ID
+  - Name
+  - Age
+  - Grade
+  - Contact
+- Uses encapsulation with private variables and public getter methods
+
+---
+
+### StudentManager.java
+- Manages the collection of students
+- Uses an ArrayList to store student objects
+- Provides methods to:
+  - Add a student
+  - Retrieve all students
+  - Check if the list is empty
+
+---
+
+### StudentInformationSystem.java
+- Contains the `main()` method
+- Provides a menu-driven user interface
+- Handles user input and program flow
+- Interacts with Student and StudentManager classes
+
+---
+
+## 5. User Instructions
+
+### Main Menu Options
+1. Add Student  
+2. View Students  
+3. Exit  
+
+### Add Student
+- User enters student ID, name, age, grade, and contact
+- The student record is stored in memory
+
+### View Students
+- Displays all stored student records in tabular format
+- Displays a message if no records are available
+
+### Exit
+- Terminates the program safely
+
+---
+
+## 6. Test Cases
+
+### Test Case 1: Add Student
+**Input:**
+- ID: ST001
+- Name: Rahul
+- Age: 20
+- Grade: 8.5
+- Contact: 9876543210
+
+**Expected Output:**
+- Student added successfully message
+
+---
+
+### Test Case 2: View Students
+**Input:**
+- Select option 2
+
+**Expected Output:**
+- Displays student details in table format
+
+---
+
+### Test Case 3: Empty Student List
+**Condition:**
+- View students without adding any records
+
+**Expected Output:**
+- Message: "No students found"
+
+---
+
+## 7. Limitations
+
+- Data is not stored permanently
+- No validation is performed on user input
+- Data is lost when the program exits
+
+---
+
+## 8. Conclusion
+
+This Week 1 Student Information System demonstrates basic Java programming concepts including classes, objects, ArrayList usage, and user interaction through the console.  
+It provides a strong foundation for adding advanced features in future weeks.
+
+---
+
+## 9. Future Enhancements
+
+- Input validation using utility classes
+- Search student by ID
+- Update and delete student records
+- File handling or database integration

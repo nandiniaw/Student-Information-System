@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class StudentInformationSystem {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        StudentManager manager = new StudentManager();
+        boolean running = true;
+
+        while (running) {
+            System.out.println("\n=== STUDENT INFORMATION SYSTEM ===");
+            System.out.println("1. Add Student");
+            System.out.println("2. View Students");
+            System.out.println("3. Exit");
+            System.out.print("Enter choice: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // consume newline
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter Student ID: ");
+                    String id = scanner.nextLine();
+
+                    System.out.print("Enter Name: ");
+                    String name = scanner.nextLine();
+
+                    System.out.print("Enter Age: ");
+                    int age = scanner.nextInt();
+
+                    System.out.print("Enter Grade: ");
+                    double grade = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    System.out.print("Enter Contact: ");
+                    String contact = scanner.nextLine();
+
+                    Student student = new Student(id, name, age, grade, contact);
+                    manager.addStudent(student);
+
+                    System.out.println("Student added successfully!");
+                    break;
+
+                case 2:
+                    System.out.println("\n=== STUDENT LIST ===");
+                    if (manager.isEmpty()) {
+                        System.out.println("No students found.");
+                    } else {
+                        System.out.printf("%-15s %-20s %-5s %-6s %-15s%n",
+                                "ID", "Name", "Age", "Grade", "Contact");
+                        System.out.println("----------------------------------------------------------");
+
+                        for (Student s : manager.getAllStudents()) {
+                            System.out.printf("%-15s %-20s %-5d %-6.2f %-15s%n",
+                                    s.getStudentId(),
+                                    s.getName(),
+                                    s.getAge(),
+                                    s.getGrade(),
+                                    s.getContact());
+                        }
+                    }
+                    break;
+
+                case 3:
+                    running = false;
+                    System.out.println("Exiting system...");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice!");
+            }
+        }
+        scanner.close();
+    }
+}
